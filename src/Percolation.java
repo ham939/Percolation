@@ -8,7 +8,7 @@ public class Percolation {
     private int numSites, numOpen = 0, opened = 0;
     private int[] tempSites;
     private static QuickUnionUF sites;
-    private static Grid grid;
+    //private static Grid grid;
 
     // creates n-by-n grid, with all sites initially blocked
     // 0 for blocked. 1 for open
@@ -18,8 +18,8 @@ public class Percolation {
         this.n = n;
         sites = new QuickUnionUF(numSites);
         tempSites = new int[numSites];
-        grid = new Grid(n);
-        grid.showGrid();
+        //grid = new Grid(n);
+        //grid.showGrid();
     }
 
     // return the amount of times a box has been opened
@@ -63,8 +63,8 @@ public class Percolation {
             if (col != n && isOpen(row, col + 1))
                 sites.union(row - 1 + (col - 1) * n, row - 1 + (col) * n);
 
-            grid.openCell(row, col);
-            grid.showGrid();
+            //grid.openCell(row, col);
+            //grid.showGrid();
             System.out.println();
         }
     }
